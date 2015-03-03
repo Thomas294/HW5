@@ -5,6 +5,10 @@ Partial Class _Default
     Inherits System.Web.UI.Page
     'Adapted from the loan calculator found at www.dreamincode.net/forums/topic/237228-looping-issues-using-a-grid-for-mortgage-calculator-amortization/
     Protected Sub btnCalcPmt_Click(sender As Object, e As EventArgs) Handles btnCalcPmt.Click
+        lbloanAmtError.Text = " "
+        lbannualInterestError.Text = " "
+        lbloantermError.Text = " "
+
         Dim loanAmount As Double
         Dim annualRate As Double
         Dim interestRate As Double
@@ -16,6 +20,37 @@ Partial Class _Default
         Dim interestPaid As Double
         Dim nBalance As Double
         Dim principal As Double
+
+        If tbLoanAmt.Text = String.Empty Then
+            lbloanAmtError.Text = "** Please enter a loan amount. ** "
+            Exit Sub
+
+        ElseIf Not Regex.IsMatch(tbLoanAmt.Text, "^\d\d{0,50}$") Then
+            lbloanAmtError.Text = "** please enter valid loan amount. ** "
+            Exit Sub
+
+        End If
+
+        If tbAnnualInterest.Text = String.Empty Then
+            lbannualInterestError.Text = "** Please enter an interest amount. ** "
+            Exit Sub
+        ElseIf Not Regex.IsMatch(tbAnnualInterest.Text, "^\d\d{0,2}$") Then
+            lbannualInterestError.Text = "** please enter valid interest amount. Enter percents as whole numbers ex 5 for 5% ** "
+            Exit Sub
+        End If
+
+
+
+        If tbLoanTerm.Text = String.Empty Then
+            lbloantermError.Text = "** Please enter a term amount. ** "
+            Exit Sub
+
+        ElseIf Not Regex.IsMatch(tbLoanAmt.Text, "^\d\d{0,50}$") Then
+            lbloantermError.Text = "** please only enter numbers. ** "
+            Exit Sub
+
+        End If
+
 
         'Declaring a table to hold the payment information.
         Dim table As DataTable = New DataTable("ParentTable")
