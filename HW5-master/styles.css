@@ -1,0 +1,35 @@
+﻿body { background-color:coral;
+       color:black;
+}
+
+h1{ font-size:18pt;}
+
+
+h3{font-size:18pt;}
+
+.mGrid { 
+    width: auto; 
+    background-color: #fff; 
+    margin: 5px 0 10px 0; 
+    border: solid 1px #525252; 
+    border-collapse:collapse; 
+    text-align:center;
+    font-family: "Comic Sans MS";
+
+    
+
+}
+
+.mGrid td {
+        padding: 2px;
+        border: solid 1px #c1c1c1;
+        color: #717171;
+    }
+
+h2
+{
+    background-color: #FF6600;
+    color: black;
+    font-size: 12pt;
+    
+}

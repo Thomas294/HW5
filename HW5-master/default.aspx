@@ -4,14 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-
+    <title>Tom's Mortgage Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
-    Mike's Mortgage Calculator
+    <h1>Tom's Mortgage Calculator</h1>
         
         <br /><br />
      
@@ -30,13 +30,13 @@
         <asp:Button ID="btnCalcPmt" runat="server" Text="Calculate" />
         
         <br /><br />
-                
+        <h3>        
         Monthly Payment: &nbsp; <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
-        
+        </h3>
         <br /><br />
-        
+        <h2>
         <asp:GridView ID="loanGridView" runat="server" />
-            
+            </h2>
         </div>
     </form>
 </body>
